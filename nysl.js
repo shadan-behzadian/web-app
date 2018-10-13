@@ -180,11 +180,11 @@ var nysl = {
 
 ],
     teamInfo: [{
-            "image": "img/u1.jpg",
+            "image": "u1.jpg",
             "team": "Foxes",
 },
         {
-            "image": "img/u2.jpg",
+            "image": "u2.jpg",
             "team": "Owls"
 
 },
@@ -194,20 +194,20 @@ var nysl = {
       },
 
         {
-            "image": "img/u4.jpg",
+            "image": "u4.jpg",
             "team": "Horses"
 
         },
 
         {
-            "image": "img/u5.jpg",
+            "image": "u5.jpg",
             "team": "Cats"
 
       },
 
         {
 
-            "image": "img/u6.jpg",
+            "image": "u6.jpg",
             "team": "Kangaroos"
 
 
