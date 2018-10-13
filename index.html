@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--to remove the search bar when opend as an application in mobile-->
+    <meta name=apple-mobile-web-app-capable content=yes>
+<meta name=apple-mobile-web-app-status-bar-style content=black>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Chela+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merienda+One" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="mobileapp.css">
+
+    <!------chat--->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+    <!------chat--->
+
+</head>
+
+<body>
+    <div id="teamNames">
+        <!------page1----->
+        <div class="homePg container background" data-div="hide" id="home">
+
+            <img class="homelogo  img-circle " src="/img/nyslLogo.jpg">
+            <div class="container">
+                <div class="row">
+                    <button class="homeButton btn-block btn-lg" onclick="hideAndShow('next')">Upcoming Match</button>
+                </div>
+                <div class="row ">
+                    <button class="homeButton btn-block btn-lg" onclick="hideAndShow('schedule')">Team Scheduale</button>
+                </div>
+                <div class="row ">
+                    <button class="homeButton btn-block btn-lg" onclick="hideAndShow('chatPg')" id="chatbtn">Sign Up/In</button>
+                </div>
+            </div>
+            <div class="row  fixfooter myFont">
+                <a href="tel:(630) 690-8132"><button class="col-xs-4 myfooter btn-md">Call</button></a>
+                <a href="mailto:michael.randall@chisoccer.org"> <button class="col-xs-4 myfooter btn-md">Email</button></a>
+                <button class="col-xs-4 myfooter btn-md" onclick="hideAndShow('chatPg')">Chat</button>
+            </div>
+
+        </div>
+        <!------page2 next match----->
+        <div data-div="hide" id="next" class="container myFont backgroundColor">
+            <button class="glyphicon glyphicon-chevron-left btn-sm backbtn" onclick="hideAndShow('home')">GoBack</button>
+
+            <h3 class="titleFont">Upcoming Match:</h3>
+            <div>
+                <div v-for="upcoming in upcomings">
+                    <div class="row">
+                        <p class="col-xs-12">Date: {{upcoming.Date}} </p>
+                    </div>
+                    <div class="row">
+                        <p class="col-xs-12">Time: {{upcoming.time}}</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4"><img class="teamlogo img-circle" v-bind:src='upcoming.localimg'>
+                            <div class='textcenter'>{{upcoming.local}}</div>
+                        </div>
+                        <p class="col-xs-4 textcenter titleFont">Vs</p>
+                        <div class="col-xs-4"><img class="teamlogo img-circle" v-bind:src='upcoming.visitorimg'>
+                            <div class='textcenter'>{{upcoming.visitor}}</div>
+                        </div>
+
+                    </div>
+
+                    <div class="row locationMargin ">
+                        <p class="col-xs-12 ">Location: {{upcoming.location}}</p>
+                        <iframe v-bind:src="upcoming.url" class="col-xs-12  maps" allowfullscreen></iframe>
+                    </div>
+                    <hr>
+
+                </div>
+            </div>
+            <div class="row  fixfooter">
+                <a href="tel:(630) 690-8132"><button class="col-xs-4 myfooter btn-md">Call</button></a>
+                <a href="mailto:michael.randall@chisoccer.org"> <button class="col-xs-4 myfooter btn-md">Email</button></a>
+                <button class="col-xs-4 myfooter btn-md" onclick="hideAndShow('chatPg')">Chat</button>
+            </div>
+
+        </div>
+        <!------page3 name of all teams----->
+        <div data-div="hide" id="schedule" class="container myFont background">
+            <div>
+                <button class="glyphicon glyphicon-chevron-left btn-sm backbtn" onclick="hideAndShow('home')">GoBack</button>
+
+                <input class="inputbox" type="text" v-model="search" placeholder="search Team Name ...">
+
+                <h3 class="titleFont textcenter">Choose a Team to see List of upcoming matches</h3>
+
+                <div class="row textcenter">
+                    <div v-on:click="showMatches(teamName.team)" onclick="hideAndShow('eachTeam')" v-for="teamName in filterdteam" class="col-xs-6">
+                        <!-- to get the names only from the filter function-->
+                        <div>
+                            <img class="teamlogo img-circle" v-bind:src='teamName.image'>
+
+                            <div class="textcenter">{{teamName.team}}</div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row  fixfooter">
+                <a href="tel:(630) 690-8132"><button class="col-xs-4 myfooter btn-md">Call</button></a>
+                <a href="mailto:michael.randall@chisoccer.org"> <button class="col-xs-4 myfooter btn-md">Email</button></a>
+                <button class="col-xs-4 myfooter btn-md" onclick="hideAndShow('chatPg')">Chat</button>
+            </div>
+
+        </div>
+        <!------page4 team schadule of team----->
+        <div data-div="hide" id="eachTeam" class="container myFont backgroundColor">
+            <button class="glyphicon glyphicon-chevron-left btn-sm backbtn" onclick="hideAndShow('schedule')">GoBack</button>
+           
+            <input class="datefilter" type="date" id="dateFilter" v-model="matchDate" v-on:change="filterdate"/>
+            <p>{{matchDate}}</p>
+            <!--<select v-for="day in dayfilter">
+              <option >{{day}}</option>
+            </select>-->
+
+            <div v-for="selected in chooseAnarray">
+                <p>Date: {{selected.Date}}</p>
+                <p>Time: {{selected.time}} </p>
+                <div class="row">
+                    <div class="col-xs-4"><img class="teamlogo img-circle" v-bind:src='selected.localimg'>
+                        <div class="textcenter">{{selected.local}}</div>
+                    </div>
+                    <p class="col-xs-4 textcenter titleFont">VS</p>
+                    <div class="col-xs-4"><img class="teamlogo img-circle" v-bind:src='selected.visitorimg'>
+                        <div class="textcenter">{{selected.visitor}}</div>
+                    </div>
+                </div>
+
+                <div class="row locationMargin container">
+                    <div>Location: {{selected.location}} </div>
+                    <iframe v-bind:src="selected.url" class="col-xs-12 maps " allowfullscreen></iframe>
+                </div>
+                <hr>
+            </div>
+            <div class="row fixfooter">
+                <a href="tel:(630) 690-8132"><button class="col-xs-4 myfooter btn-md">Call</button></a>
+                <a href="mailto:michael.randall@chisoccer.org"> <button class="col-xs-4 myfooter btn-md">Email</button></a>
+                <button class="col-xs-4 myfooter btn-md" onclick="hideAndShow('chatPg')">Chat</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-----------CHAT---------------------------------------------------------------->
+
+    <div data-div="hide" id="chatPg" class="container ">
+        <div>
+            <button class="glyphicon glyphicon-chevron-left btn-sm backbtn" onclick="hideAndShow('home')">GoBack</button>
+            <button id='logout' class='btn-sm backbtn'>logout</button>
+        </div>
+        <div class="myChatStyle">
+            <div class="chat">
+                <div class="advice">
+                    <p class="logoutmsg">This Chatroom is for general organizations</p>
+                    <p class="loginMsg">You must login to continue</p>
+                    <p class="loginMsg">You are currently logged out</p>
+                    <button id="login" class="loginBtn loginBtngoogle">Login with Google</button>
+
+                </div>
+                <div id="posts" class="box">
+                    Loading posts...
+                </div>
+
+                <div class="inputs">
+                    <input id="textInput" class="input" type="text" placeholder="Your message...">
+                    <button id="create-post" class="button is-primary">Send</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-----------Profile page---------------------------------------------------->
+
+
+    <!------chat--->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--  <script type="text/javascript" src="chat/main2.js"></script>-->
+
+
+    <!-- CHANGE THIS CODE BY YOURS -->
+
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDzr3eJ8KbNEZrKZKRTkBt5Tp0l1t1XJk4",
+            authDomain: "nysl-school-web-app.firebaseapp.com",
+            databaseURL: "https://nysl-school-web-app.firebaseio.com",
+            projectId: "nysl-school-web-app",
+            storageBucket: "nysl-school-web-app.appspot.com",
+            messagingSenderId: "1066467729080"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+
+
+    <!------chat--->
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="nysl.js"></script>
+    <!--    <script type="text/javascript" src="chat/main.js"></script>-->
+    <script src="mobileapp.js"></script>
+
+
+
+
+
+</body>
+
+</html>

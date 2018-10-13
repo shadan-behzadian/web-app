@@ -1,0 +1,519 @@
+
+
+.background{
+   background-image: url(img/football.jpg);
+        background-size: cover;
+    min-height: 100vh; 
+   
+    
+}
+
+.backgroundColor{
+    background-color:rgb(57, 105, 147)
+        
+}
+
+
+    .homePg {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+
+
+    .titleFont {
+        font-family: 'Merienda One', cursive;
+        font-size: 150%;
+
+
+    }
+.backbtn{
+    background-color: white;
+    color: black;
+    font-size: 19px;
+    position:sticky;
+    z-index: 2;
+  
+
+}
+
+    .myFont{
+         font-family: 'Merienda One', cursive; 
+        color: white;
+       
+    }
+    
+    .homelogo {
+        height: 200px;
+        width: 200px;
+        box-shadow: 7px 7px 3px lightgreen;
+        border-style: outset;
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+
+    }
+
+    .teamlogo {
+        height: 100px;
+        width: 100px;
+        display:block;
+        margin: auto;
+      
+/*        box-shadow: 10px 10px 5px grey;*/
+        border-style: outset;
+      margin-bottom: 10px;
+
+
+    }
+
+
+   
+
+
+    .maps {
+        height: 200px;
+        border: none;
+
+    }
+
+    .textcenter {
+        text-align: center;
+    }
+
+    .homeButton {
+        border-radius: 10px;
+        border-style: outset;
+        font-family: 'Chela One', cursive;
+        font-size: 30px;
+
+        /*    transition-duration: 0.4s;*/
+        /*    background-image: radial-gradient(darkseagreen,green);*/
+        background-color: lightgreen;
+        margin-top: 10px;
+        margin-bottom: 10px;
+/*        box-shadow: 10px 10px 5px grey;*/
+
+        -webkit-animation-name: ShineAnimation;
+        -webkit-animation-duration: 10s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: cubic-bezier(.50, .300, .98, .47);
+
+
+    }
+
+    @-webkit-keyframes ShineAnimation {
+        from {
+            background-repeat: no-repeat;
+            background-image: -webkit-linear-gradient( top left,
+            rgba(255, 255, 255, 0.0) 0%,
+            rgba(255, 255, 255, 0.0) 45%,
+            rgba(255, 255, 255, 0.5) 48%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0.5) 52%,
+            rgba(255, 255, 255, 0.0) 57%,
+            rgba(255, 255, 255, 0.0) 100%);
+            background-position: -250px -250px;
+            background-size: 600px 600px
+        }
+        to {
+            background-repeat: no-repeat;
+            background-position: 250px 250px;
+        }
+    }
+
+
+    /*
+.homeButton:hover {
+    background-color: yellowgreen;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+*/
+    .fixfooter {
+        position: fixed !important;
+        bottom: 0 !important;
+        width: 100% ;
+
+
+
+    }
+
+
+    .myfooter {
+        border-radius: 10px;
+        border-style: outset;
+        transition-duration: 0.4s;
+/*        box-shadow: 10px 10px 5px grey;*/
+        border-style: outset;
+        background-color: white;
+        color: black;
+
+
+    }
+
+    .myfooter:hover {
+        background-color: yellowgreen;
+        color: white;
+/*        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);*/
+    }
+
+    .locationMargin {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+.inputbox{
+    font-family: cursive;
+    color: green;
+    font-weight: bold;
+    padding-left: 5px;
+   width: 50%;
+    position:sticky;
+    z-index: 2;
+    border-radius: 10px;
+    border-style: outset;
+    margin-bottom: 20px;
+}
+    .datefilter{
+        color:black;
+        width: 50%;
+        
+    }
+
+/*-------------------media query--------------------*/
+
+@media screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 2600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+      
+      .homelogo{
+          width: 30%;
+          height: 30%;
+          margin-top: 15%;
+          margin-bottom: 50px;
+      }
+      .homeButton{
+          width: 50%;
+          margin: 5px auto;
+      }
+    
+      
+      .maps{
+          margin: auto;
+      }
+     
+}
+
+@media screen 
+  and (min-device-width: 731px) 
+  and (max-device-width: 732px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    
+      .homeButton{
+          width: 100%;
+      }
+      
+       .homelogo{
+              width: 10%;
+              height: 10%;
+          margin-top: 5%;
+          box-shadow: none;
+          margin-bottom: 5px;
+      }
+      
+      
+      
+     
+}
+
+
+
+@media screen 
+  and (min-device-width: 812px) 
+  and (max-device-width: 813px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    
+      .homeButton{
+          width: 100%;
+      }
+      
+       .homelogo{
+              width: 10%;
+              height: 10%;
+          margin-top: 5%;
+          box-shadow: none;
+          margin-bottom: 5px;
+      }
+      
+     
+}
+
+@media screen 
+  and (min-device-width: 823px) 
+  and (max-device-width: 824px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    
+      .homeButton{
+          width: 100%;
+      }
+      
+       .homelogo{
+              width: 10%;
+              height: 10%;
+          margin-top: 5%;
+          box-shadow: none;
+          margin-bottom: 5px;
+      }
+      
+      
+     
+}
+
+
+@media screen 
+  and (min-device-width: 736px) 
+  and (max-device-width: 737px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    
+    
+      
+       .homelogo{
+              width: 10%;
+              height: 10%;
+          margin-top: 5%;
+          box-shadow: none;
+          margin-bottom: 5px;
+      }
+      
+     
+      
+     
+}
+
+
+
+
+
+@media screen 
+  and (min-device-width: 500px) 
+  and (max-device-width: 670px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+      
+      .homelogo{
+              width: 10%;
+              height: 10%;
+          margin-top: 5%;
+          box-shadow: none;
+          margin-bottom: 5px;
+      }
+      
+      
+      
+     
+}
+
+
+@media screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 2600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+      
+      .homeButton{
+          width: 70%;
+         
+          margin-left: auto;
+          margin-right: auto;
+          
+         
+      }
+      .homelogo{
+              width: 30%;
+              height: 30%;
+          margin-top: 5%;
+          margin-bottom: 60px;
+      }
+      
+  .fixfooter {
+    width: 94%;
+     
+}
+
+}
+
+
+@media screen 
+  and (min-device-width: 1366px) 
+  and (max-device-width: 1367px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+
+.fixfooter {
+    width: 85%;
+}
+}
+
+/* ----------------------------style for chat ---------------------------*/
+
+
+.loginBtngoogle {
+  /*font-family: "Roboto", Roboto, arial, sans-serif;*/
+  background: #DD4B39;
+}
+.loginBtngoogle:before {
+  border-right: #BB3F30 1px solid;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png') 6px 6px no-repeat;
+}
+.loginBtn {
+  box-sizing: border-box;
+  position: relative;
+  /* width: 13em;  - apply for fixed size */
+  margin: 0.2em;
+  padding: 0 15px 0 46px;
+  border: none;
+  text-align: left;
+  line-height: 34px;
+  white-space: nowrap;
+  border-radius: 0.2em;
+  font-size: 16px;
+  color: #FFF;
+}
+.loginBtn:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 100%;
+}
+.loginBtn:focus {
+  outline: none;
+}
+.loginBtn:active {
+  box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+}
+
+
+.message {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+    background-color: lightgoldenrodyellow;
+    border-radius: 10px;
+    opacity: 0.8;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+   
+}
+
+.myMessage {
+text-align: right;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+    background-color: rgb(210, 250, 220);
+    border-radius: 10px;
+    opacity: 0.8;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+   
+     
+}
+
+#posts{
+    height: 400px;
+  
+    overflow: scroll;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.advice{
+    height: 200px;
+    width: 100%;
+    overflow: scroll;
+     margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgreen;
+    color: black;
+    border-radius: 20px;
+}
+    
+      .box{
+          /* TO wrap the messeages in theri own div*/
+          word-wrap: break-word; 
+         
+      }
+
+
+
+.chat{
+    height: 400px;
+}
+
+myChatStyle{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+myChatStyle:before{
+    content: "Welcome to NYSl chat platform";
+    font-size: 30px;
+    font-family: Verdana;
+    margin-bottom: 30px;
+}
+
+myChatStyle:after{
+    content: "Write your post and click 'Send'";
+    margin-top: 70px;
+    font-size: 14px;
+    color: grey;
+}
+
+.inputs{
+    display: flex;
+}
+
+input{
+    margin-right: 15px;
+    width: 100px;
+}
+
+.notification:not(:last-child){
+    margin-bottom: .3rem;
+}
+
+.notification.is-info{
+    text-align: right;
+    max-width: 80%;
+    align-self: flex-end;
+    border-radius: 20px;
+}
+
+.notification.is-primary{
+    text-align: left;
+    max-width: 80%;
+    align-self: flex-start;
+    border-radius: 20px;    
+}
+
+.name{
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+}
+
+.myName{
+    text-align: right;
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+}
+
