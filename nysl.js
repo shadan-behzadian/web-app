@@ -180,34 +180,34 @@ var nysl = {
 
 ],
     teamInfo: [{
-            "image": "/img/u1.jpg",
+            "image": "img/u1.jpg",
             "team": "Foxes",
 },
         {
-            "image": "/img/u2.jpg",
+            "image": "img/u2.jpg",
             "team": "Owls"
 
 },
         {
-            "image": "/img/u3.jpg",
+            "image": "img/u3.jpg",
             "team": "Penguins"
       },
 
         {
-            "image": "/img/u4.jpg",
+            "image": "img/u4.jpg",
             "team": "Horses"
 
         },
 
         {
-            "image": "/img/u5.jpg",
+            "image": "img/u5.jpg",
             "team": "Cats"
 
       },
 
         {
 
-            "image": "/img/u6.jpg",
+            "image": "img/u6.jpg",
             "team": "Kangaroos"
 
 
