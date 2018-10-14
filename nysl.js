@@ -207,7 +207,7 @@ var nysl = {
 
         {
 
-            "image": "u6.jpg",
+            "image": "img/u6.jpg",
             "team": "Kangaroos"
 
 
